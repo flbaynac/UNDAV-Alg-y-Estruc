@@ -2,19 +2,23 @@
 
 using namespace std;
 
+void clasificarNumeros(int &num, int &numAnterior, int &grupoUnoContador, int &grupoDosContador, int &contadorDeInterrupciones){
+    if(num > numAnterior){
+        grupoUnoContador++;
+        numAnterior = num;
+    }else{
+        grupoDosContador++;
+        numAnterior = num;
+        contadorDeInterrupciones++;
+    }
+}
+
 int main(int, char**) {
     int num, numAnterior=0, contadorDeInterrupciones=0, grupoUnoContador=0, grupoDosContador=0;
     cout << "Ingrese un número natural(o ingrese -1 para terminar): ";
     cin >> num;
     while(num != -1){
-        if(num > numAnterior){
-            grupoUnoContador++;
-            numAnterior = num;
-        }else{
-            grupoDosContador++;
-            numAnterior = num;
-            contadorDeInterrupciones++;
-        }
+        clasificarNumeros(num, numAnterior, grupoUnoContador, grupoDosContador, contadorDeInterrupciones);
         cout << "Ingrese un número natural(o ingrese -1 para terminar): ";
         cin >> num;
     }
