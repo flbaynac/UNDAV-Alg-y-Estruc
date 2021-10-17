@@ -1,0 +1,1 @@
+void copiarCadena(char cad1[], char cad2[]);
