@@ -3,6 +3,7 @@
 #include "ejercicio1.h"
 #include "ejercicio2.h"
 #include "ejercicio3.h"
+#include "ejercicio4.h"
 
 #define TAMANIO_MAXIMO_CARACTERES_EJ1 30
 
@@ -45,7 +46,8 @@ bool testEjercicioTres(){
 }
 
 bool testEjercicioCuatro(){
-    char parrafo[200] = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec q";
+    char parrafo[200] = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec \0";
+    cout << datosDelParrafo(parrafo);
     if(true)
         return true;
     else
