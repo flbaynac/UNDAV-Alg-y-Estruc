@@ -4,6 +4,7 @@
 #include "ejercicio2.h"
 #include "ejercicio3.h"
 #include "ejercicio4.h"
+#include "ejercicio5.h"
 
 #define TAMANIO_MAXIMO_CARACTERES_EJ1 30
 
@@ -47,14 +48,25 @@ bool testEjercicioTres(){
 
 bool testEjercicioCuatro(){
     char parrafo[200] = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec \0";
-    cout << datosDelParrafo(parrafo);
-    if(true)
+    string resultado;
+    resultado = datosDelParrafo(parrafo);
+    if(resultado.compare("Se ha ingresado un texto mayor a 200 caracteres") == 0 || resultado.compare("Error") == 0)
+        return false;
+    else
+        return true;
+}
+
+bool testEjercicioCinco(){
+    char cad[45] = "enciclopedia";
+    int numeroVocales[5]={0,0,0,0,0};
+    numVocales(cad, numeroVocales);
+    if(numeroVocales[0] == 1 && numeroVocales[1] == 2 && numeroVocales[2] == 2 && numeroVocales[3] == 1 && numeroVocales[4] == 0)
         return true;
     else
         return false;
 }
 
-int main() {/*
+int main() {
     if(testEjercicioUno())
         cout << "Ejercicio 1 Pass\n";
     else
@@ -68,10 +80,15 @@ int main() {/*
     if(testEjercicioTres())
         cout << "Ejercicio 3 Pass\n";
     else
-        cout << " Ejercicio 3 Failed\n";*/
-
+        cout << " Ejercicio 3 Failed\n";
+    
     if(testEjercicioCuatro())
         cout << "Ejercicio 4 Pass\n";
     else
         cout << " Ejercicio 4 Failed\n";
+
+    if(testEjercicioCinco())
+        cout << "Ejercicio 5 Pass\n";
+    else
+        cout << " Ejercicio 5 Failed\n";
 }
