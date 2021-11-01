@@ -1,0 +1,1 @@
+void unirArray(int *arr1, int *arr2, int *newArr, int size1, int size2);
